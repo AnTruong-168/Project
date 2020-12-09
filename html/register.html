@@ -1,59 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
-    <div id="registerformDIV">
-        <form id="register-form">
-            <table>
-                <tr>
-                    <td>Username: </td>
-                    <td>
-                        <input type="email" id="username" placeholder="abc@example.com" required maxlength="50">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Password: </td>
-                    <td>
-                        <input type="password" id="password" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Confirm password: </td>
-                    <td>
-                        <input type="password" id="confirm-password" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Fullname: </td>
-                    <td>
-                        <input type="text" id="fullname" required maxlength="50">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Phone: </td>
-                    <td>
-                        <input type="tel" id="phone" required maxlength="10">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Date of Birth: </td>
-                    <td>
-                        <input type="date" id="DOB" required>
-                    </td>
-                </tr>
-            </table>
-
-            <input type="submit" value="Sign up" id="btn-register">
-        </form>
-        <div>
-            Already has an account ? <a href="login.html">Back to login</a>
+    <form id="register-form">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Full Name</span>
+            <input type="text" class="form-control" id="fullname" placeholder="Nguyen Van A" aria-label="Fullname" required>
         </div>
-    </div>
+        
+        <div class="input-group mb-3">
+            <span class="input-group-text">Email address</span>
+            <input type="email" class="form-control" id="username" placeholder="abc@Example.com" aria-label="Email Address" required>
+            <button class="btn btn-outline-secondary" type="button" id="Check-email">Check</button>
+        </div>
+        
+        <label class="form-label">Account Information</label>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Phone Number</span>
+            <input type="tel" class="form-control" id="phone" required>
+        </div>
+        
+        <div class="input-group mb-3">
+            <span class="input-group-text">Birthday</span>
+            <input type="date" class="form-control" id="DOB" aria-label="MM/DD/YYYY" required>
+        </div>
+        
+        <div class="input-group mb-3">
+            <span class="input-group-text">Password</span>
+            <input type="password" class="form-control" id="password" placeholder="Password" aria-label="Password" required>
+            <span class="input-group-text">Confirm password</span>
+            <input type="password" class="form-control" id="confirm-password" placeholder="Confirm password" aria-label="Confirm password" required>
+        </div>
+
+        <button type="submit" class="btn btn-success" id="btn-register">Sign up</button>
+    </form>
+    <div>Already has an account? <a href="login.html">Back to login !</a></div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../js/script.js"></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="../js/script.js"></script>
 </body>
 </html>

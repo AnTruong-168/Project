@@ -1,6 +1,6 @@
 $(document).on("submit", "#register-form", Register);
 $(document).on("submit", "#login-form", Login);
-
+$(document).on("click", "#Check-email", CheckEmail);
 function Register(e)
 {
     e.preventDefault();
@@ -61,4 +61,16 @@ function Login(e)
             }
         }
     );
+}
+function Testing(e)
+{
+    e.preventDefault();
+    if($("#confirm-password").val()===$("#password").val())
+    {
+        alert("Registered successfully"+"\nUsername: "+$("#username").val()+"\nPassword: "+$("#password").val());
+    }
+    else
+    {
+        alert("Password missmatch!")
+    }
 }
