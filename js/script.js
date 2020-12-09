@@ -1,4 +1,5 @@
 $(document).on("submit", "#register-form", Register);
+$(document).on("submit", "#login-form", Login);
 
 function Register(e)
 {
@@ -34,4 +35,30 @@ function Register(e)
     {
         alert("Password mismatched!");
     }
+}
+
+function Login(e)
+{
+    e.preventDefault();
+    $.ajax(
+        {
+            type: "POST",
+            url: "../php/login.php",
+            data: {
+                username : $("#username").val(),
+                password : $("#password").val(),
+            },
+            success: function( result ) {
+                result = $.parseJSON(result);
+                
+                if(result.success) {
+                    alert("Login successfully!");
+                    location.href="home.html";
+                }
+                else {
+                    alert("Login failed!");
+                }
+            }
+        }
+    );
 }
