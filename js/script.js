@@ -3,7 +3,7 @@ $(document).on("submit", "#register-form", Register);
 function Register(e)
 {
     e.preventDefault();
-    if($("#cpassword").val()===$("#password").val())
+    if($("#confirm-password").val()===$("#password").val())
     {
         $.ajax(
             {
