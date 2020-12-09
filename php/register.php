@@ -3,7 +3,7 @@ $username = $_POST['username'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encrypt the password.
 $fullname = $_POST['fullname'];
 $phone = $_POST['phone'];
-$birthday = $_POST['DOB'];
+$birthday = $_POST['birthday'];
 $success = false;
 
 include('database.php');

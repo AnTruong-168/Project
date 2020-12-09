@@ -9,7 +9,13 @@ function Register(e)
             {
                 type: "POST",
                 url: "../php/register.php",
-                data: $('register-form').serialize(),
+                data: {
+                    username : $("#username").val(),
+                    password : $("#password").val(),
+                    fullname : $("#fullname").val(),
+                    phone : $("#phone").val(),
+                    birthday : $("#DOB").val()
+                },
                 success: function( result ) {
                     result = $.parseJSON(result);
                     
