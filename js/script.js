@@ -86,7 +86,7 @@ function ShowAllProduct(){
         {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"}
     ];
    for(item of product ){
-       var text =
+       var text = `
                 <div id="Product_detail">
                 <div><img class="img-fluid" src="${item.img}"></img></div>
                     <div>
@@ -95,7 +95,7 @@ function ShowAllProduct(){
                     <div>
                         ${item.price}
                     </div>
-                    </div> ;
+                    </div> `;
                     
                        $("#Products").append(text);
    }
