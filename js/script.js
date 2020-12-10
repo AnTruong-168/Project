@@ -1,6 +1,6 @@
 $(document).on("submit", "#register-form", Register);
 $(document).on("submit", "#login-form", Login);
-$(document).on("click", "#Check-email", CheckEmail);
+$("#Products").ready(ShowAllProduct);
 function Register(e)
 {
     e.preventDefault();
@@ -73,4 +73,30 @@ function Testing(e)
     {
         alert("Password missmatch!")
     }
+}
+
+
+function ShowAllProduct(){
+    $("#Products").empty();
+    var product=[
+        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
+        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
+        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
+        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
+        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"}
+    ];
+   for(item of product ){
+       var text =
+                <div id="Product_detail">
+                <div><img class="img-fluid" src="${item.img}"></img></div>
+                    <div>
+                        ${item.name}
+                    </div>
+                    <div>
+                        ${item.price}
+                    </div>
+                    </div> ;
+                    
+                       $("#Products").append(text);
+   }
 }
