@@ -10,11 +10,11 @@ include('database.php');
 
 $db = getDB();
 if($db) {
-    $query = 'CREATE TABLE IF NOT EXISTS products (id INT NOT NULL,
-                                                   product_name VARCHAR(50) PRIMARY KEY,
-                                                   product_description VARCHAR(255) NOT NULL,
+    $query = 'CREATE TABLE IF NOT EXISTS products (id INT PRIMARY KEY ,
+                                                   product_name VARCHAR(255) NOT NULL,
+                                                   product_description TEXT NOT NULL,
                                                    price INT NOT NULL,
-                                                   img VARCHAR(50) NOT NULL)';
+                                                   img TEXT NOT NULL)';
     pg_query($query);
 
     if( isset($product_id) && isset($product_name) && isset($product_price) ) {
