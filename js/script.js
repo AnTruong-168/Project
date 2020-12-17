@@ -1,5 +1,6 @@
 $(document).on("submit", "#register-form", Register);
 $(document).on("submit", "#login-form", Login);
+$(document).on("submit", "#addproduct-form", AddProduct);
 $("#Products").ready(ShowAllProduct);
 function Register(e)
 {
@@ -75,6 +76,33 @@ function Testing(e)
     }
 }
 
+function AddProduct()
+{
+    $.ajax(
+        {
+            type: "POST",
+            url: "../php/addproduct.php",
+            data: {
+                product_id : $("#product_id").val(),
+                product_name : $("#product_name").val(),
+                product_price : $("#product_price").val(),
+                product_des : $("#product_des").val(),
+                product_img : $("#product_img").val(),
+            },
+            success: function( result ) {
+                result = $.parseJSON(result);
+                
+                if(result.success) {
+                    alert("Added "+$("#product_name").val());
+                    location.href="home.html";
+                }
+                else {
+                    alert("Failed to add new product");
+                }
+            }
+        }
+    );
+}
 
 function ShowAllProduct(){
     $("#Products").empty();

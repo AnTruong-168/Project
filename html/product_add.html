@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="nav-control">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">
+                <img src="https://lh3.googleusercontent.com/proxy/oRWA9ifB4R5Y2xI3_m4ISYutobFXUC9N4PrW5UNrP27gnGfzWFEFrkQ4jxLjkkcPumXEnooOTUtwUNpX7oDUMA" alt="" height="45px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                </ul>
+                
+            </div>
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="form-control">
+        <form id="addproduct-form">
+            
+            <label for="username" class="form-label">Product information</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text">ID</span>
+                <input type="text" class="form-control" id="product_id" placeholder="Product ID" aria-label="Product ID" required>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Name</span>
+                <input type="text" class="form-control" id="product_name" placeholder="Product name" aria-label="Product name" required>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Description</span>
+                <input type="text" class="form-control" id="product_des" placeholder="Description" aria-label="Description" required>
+            </div>
+            
+            <div class="input-group mb-3">
+                <span class="input-group-text">Price</span>
+                <input type="text" class="form-control" id="product_price" placeholder="Price" aria-label="Cost" required>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Image link</span>
+                <input type="text" class="form-control" id="product_img" placeholder="example.com/imglink" aria-label="Product image" required>
+            </div>
+
+            
+            
+
+            <button type="submit" class="btn btn-success" id="btn-addproduct">Add new product</button>
+            
+        </form>
+        <a href="home.html"><button class="btn btn-warning">Back</button></a>
+    </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../js/script.js"></script>
+    
+</body>
+</html>
