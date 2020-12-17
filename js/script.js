@@ -136,7 +136,8 @@ function ShowAllProduct(products){
                     <div>
                         ${item.price}
                     </div>
-                    </div> `;
+                <button class="btn btn-success" id="btn-viewdetail">'Detail'</button>
+                </div> `;
                     
                        $("#Products").append(text);
    }
