@@ -123,7 +123,7 @@ function showProduct_php(){
 function ShowAllProduct(products){
     $("#Products").empty();
 
-   for(item of product ){
+   for(item of products ){
        item.price = numberWithCommas(item.price);
        var text = `
                 <div id="Product_detail">
