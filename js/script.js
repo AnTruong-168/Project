@@ -126,17 +126,18 @@ function ShowAllProduct(products){
    for(item of products){
        var text = `
                 <div id="Product_detail">
-                <div><img src="${item.img}" width="auto" height="200px"></img></div>
-                    <div>
+                <div><img id="product_img" src="${item.img}" width="auto" height="200px"></img></div>
+                    <div id="product_id">
                         ${item.id}
                     </div>
-                    <div>
+                    <div id="product_name">
                         ${item.product_name}
                     </div>
-                    <div>
+                    <div id="product_price">
                         ${item.price}
                     </div>
-                <button class="btn btn-success" id="btn-viewdetail">'Detail'</button>
+                <button class="btn btn-success" id="btn-viewdetail">Detail</button>
+                <button class="btn btn-warning" id="btn-edit">Edit</button>
                 </div> `;
                     
                        $("#Products").append(text);
