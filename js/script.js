@@ -76,8 +76,9 @@ function Testing(e)
     }
 }
 
-function AddProduct()
+function AddProduct(e)
 {
+    e.preventDefault();
     $.ajax(
         {
             type: "POST",
@@ -87,13 +88,13 @@ function AddProduct()
                 product_name : $("#product_name").val(),
                 product_price : $("#product_price").val(),
                 product_des : $("#product_des").val(),
-                product_img : $("#product_img").val(),
+                product_img : $("#product_img").val()
             },
             success: function( result ) {
                 result = $.parseJSON(result);
                 
                 if(result.success) {
-                    alert("Added "+$("#product_name").val());
+                    alert("Added product");
                     location.href="home.html";
                 }
                 else {
