@@ -126,7 +126,7 @@ function ShowAllProduct(products){
    for(item of products){
        var text = `
                 <div id="Product_detail">
-                <div><img class="img-fluid" src="${item.img}"></img></div>
+                <div><img class="img-fluid" src="${item.img} width="350px" height="350px"></img></div>
                     <div>
                         ${item.id}
                     </div>
