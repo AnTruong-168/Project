@@ -127,13 +127,13 @@ function ShowAllProduct(products){
        var text = `
                 <div id="Product_detail">
                 <div><img class="img-fluid" src="${item.img}"></img></div>
-                    <div>
+                    <div>ID:
                         ${item.id}
                     </div>
-                    <div>
+                    <div>Name:
                         ${item.product_name}
                     </div>
-                    <div>
+                    <div>Price
                         ${item.price}
                     </div>
                     </div> `;
