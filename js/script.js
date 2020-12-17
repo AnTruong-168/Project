@@ -47,7 +47,7 @@ function Login(e)
             url: "../php/login.php",
             data: {
                 username : $("#username").val(),
-                password : $("#password").val(),
+                password : $("#password").val()
             },
             success: function( result ) {
                 result = $.parseJSON(result);
@@ -99,6 +99,7 @@ function AddProduct(e)
                 }
                 else {
                     alert("Failed to add new product");
+                    location.href="home.html"
                 }
             }
         }
