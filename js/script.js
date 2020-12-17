@@ -106,26 +106,33 @@ function AddProduct(e)
     );
 }
 
-function ShowAllProduct(){
+function showProduct_php(){
+    $.ajax({
+        type: "POST", url: "../php/showproduct.php",
+        success: function(result){
+            result = $.parseJSON(result);
+            if(result){
+                ShowAllProduct(result);
+            }
+            else{
+                return;
+            }
+        }
+    });
+}
+function ShowAllProduct(products){
     $("#Products").empty();
-    var product=[
-        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
-        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
-        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
-        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
-        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
-        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
-        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
-        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
-        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"},
-        {name:"Pikachu",price:"200.000",img:"https://images-na.ssl-images-amazon.com/images/I/61iWqqcq%2BKL._AC_SL1500_.jpg"}
-    ];
+
    for(item of product ){
+       item.price = numberWithCommas(item.price);
        var text = `
                 <div id="Product_detail">
                 <div><img class="img-fluid" src="${item.img}"></img></div>
                     <div>
-                        ${item.name}
+                        ${item.id}
+                    </div>
+                    <div>
+                        ${item.product_name}
                     </div>
                     <div>
                         ${item.price}
