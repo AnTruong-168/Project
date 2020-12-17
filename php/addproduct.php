@@ -27,10 +27,3 @@ if($db) {
 
 echo json_encode(array('success' => $success));
 ?>
-
-
-
-
-
-
-?>
