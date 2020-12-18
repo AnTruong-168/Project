@@ -1,6 +1,7 @@
 $(document).on("submit", "#register-form", Register);
 $(document).on("submit", "#login-form", Login);
 $(document).on("submit", "#addproduct-form", AddProduct);
+$(document).on("submit", "#Product-form", ViewDetail);
 $("#Products").ready(showProduct_php);
 function Register(e)
 {
@@ -126,20 +127,26 @@ function ShowAllProduct(products){
    for(item of products){
        var text = `
                 <div id="Product_detail">
-                <div><img id="product_img" src="${item.img}" width="auto" height="200px"></img></div>
-                    <div id="product_id">
-                        ${item.id}
-                    </div>
-                    <div id="product_name">
-                        ${item.product_name}
-                    </div>
-                    <div id="product_price">
-                        ${item.price}
-                    </div>
-                <button class="btn btn-success" id="btn-viewdetail">Detail</button>
-                <button class="btn btn-warning" id="btn-edit">Edit</button>
+                    <form id="Product-form">
+                        <div><img id="product_img" src="${item.img}" width="auto" height="200px"></img></div>
+                            <div id="product_id">
+                                ${item.id}
+                            </div>
+                            <div id="product_name">
+                                ${item.product_name}
+                            </div>
+                            <div id="product_price">
+                                ${item.price}
+                            </div>
+                        <button type="submit" class="btn btn-success" id="btn-viewdetail">Detail</button>
+                        <button class="btn btn-warning" id="btn-edit">Edit</button>
+                    </form>
                 </div> `;
                     
                        $("#Products").append(text);
    }
+}
+function ViewDetail()
+{
+    alert("Product ID: "+$("#product_id").val());
 }
