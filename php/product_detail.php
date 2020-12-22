@@ -2,7 +2,7 @@
 $id = $_POST['id'];
 include("database.php");
 if(getdb()){
-    $query="SELECT * FROM products where id = $id";
+    $query="SELECT * FROM products where id = '$id'";
     $result=pg_query($query);
 
     if($result){
