@@ -2,6 +2,7 @@ $(document).on("submit", "#register-form", Register);
 $(document).on("submit", "#login-form", Login);
 $(document).on("submit", "#addproduct-form", AddProduct);
 $("#Products").ready(showProduct_php);
+$("#product_show_detail").ready(viewDetail);
 var tmp = 0;
 function Register(e)
 {
@@ -166,6 +167,32 @@ function viewDetail(product)
 {
     
     tmp = product.getAttribute('data-product-id');
-    alert(tmp);
+    $.ajax({
+        type: "POST", 
+        url: "../php/product_detail.php",
+        data: {id : tmp},
+        success: function(result){
+            result = $.parseJSON(result);
+            if(result){
+                detailPage(result);
+            }
+            else{
+                return;
+            }
+        }
+    });
     
+}
+function detailPage(product)
+{
+    for(item of products){
+        var text = `
+                    <div class="d-flex"><img src='${item.img}' width="200%"></div>
+                    <div><label>Name :</label>${item.pname}</div>
+                    <div><label>Price :</label>${item.price}</div>
+                    <div><label>Description :</label>${item.des}</div>
+                    `;
+                     
+                        $("#product_show_detail").append(text);
+    }
 }

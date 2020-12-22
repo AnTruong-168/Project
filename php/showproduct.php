@@ -1,4 +1,4 @@
-<?php>
+<?php
 include("database.php");
 if(getdb()){
     $query="SELECT * FROM products";
