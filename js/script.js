@@ -149,7 +149,7 @@ function ShowAllProduct(products){
                        $("#Products").append(text);
    }
 }
-function viewDetails(product){
+function viewDetail(product){
     $("#product_d").empty();
     $("#product_n").empty();
     var ID= product.getAttribute('data-product-id'); //Get value from attribute data-product-id
