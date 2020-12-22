@@ -137,19 +137,19 @@ function ShowAllProduct(products){
                 <div><img id="product_img" src="${item.img}" width="auto" height="200px"></img></div>
                     <div id="product_id">
                         <tr>
-                            <td><label>Product ID: </label></td>
+                            <td>ID: </td>
                             <td>${item.id}</td>
                         </tr>
                     </div>
                     <div id="product_name">
                         <tr>
-                            <td><label>Product Name: </label></td>
+                            <td>Name: </td>
                             <td>${item.pname}</td>
                         </tr>
                     </div>
                     <div id="product_price">
                         <tr>
-                            <td><label>Price: </label></td>
+                            <td>Price: </td>
                             <td>${item.price}</td>
                         </tr>
                     </div>
