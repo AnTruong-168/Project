@@ -2,7 +2,6 @@ $(document).on("submit", "#register-form", Register);
 $(document).on("submit", "#login-form", Login);
 $(document).on("submit", "#addproduct-form", AddProduct);
 $("#Products").ready(showProduct_php);
-$("#product_show_detail").ready(detailPage);
 var tmp;
 function Register(e)
 {
@@ -150,38 +149,21 @@ function ShowAllProduct(products){
                        $("#Products").append(text);
    }
 }
+function ViewDetails(product){
+    $("#product_d").empty();
+    $("#product_n").empty();
+    var ID= product.getAttribute('data-product-id'); //Get value from attribute data-product-id
+    $.ajax({
+        type: "POST", url: "../php/product_detail.php",
+        data: {id: ID},
+        success: function(result){
+            result = $.parseJSON(result);
+	////////////////////////// USE DATA FROM RESULT ///////////////////////////////
+            $("#product_d").append(result[0].description);
+            $("#product_n").append(result[0].pname);
 
-function viewDetail(product)
-{
-    
-    tmp = product.getAttribute('data-product-id');
-    location.href="product_detail.html";
-    
-}
-function detailPage()
-{
-    alert(tmp);
-        $.ajax({
-            type: "POST", 
-            url: "../php/product_detail.php",
-            data: {id : tmp},
-            success: function(result){
-                result = $.parseJSON(result);
-                if(result){
-                    var text = `
-                            <div>
-                            <div class="d-flex"><img src='${result[0].img}' width="200%"></div>
-                            <div><label>Name :</label>${result[0].pname}</div>
-                            <div><label>Price :</label>${result[0].price}</div>
-                            <div><label>Description :</label>${result[0].des}</div>
-                            </div>
-                                `;
-                     
-                        $("#product_show_detail").append(text);
-                }
-                else{
-                    return;
-                }
-            }
-        });
+            document.getElementById("imgchange").src = result[0].img;
+            
+        }
+    });
 }
