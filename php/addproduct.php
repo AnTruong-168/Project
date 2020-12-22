@@ -20,7 +20,7 @@ if($db) {
     pg_query($query);
 
     if( isset($product_id) && isset($product_name) && isset($product_price) ) {
-        $query = "INSERT INTO products VALUES ('$product_id', '$product_name', '$product_des',
+        $query = "INSERT INTO products VALUES ('$product_id', '$product_name', '$product_des', '$product_type',
                                               '$product_price', '$product_img')";
         pg_query($query);
         $success = 1;
