@@ -167,7 +167,7 @@ function viewDetail(product)
 {
     
     tmp = product.getAttribute('data-product-id');
-    
+    location.href="product_detail.html";
     
 }
 function detailPage()
