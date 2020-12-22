@@ -159,7 +159,7 @@ function viewDetail(product){
         success: function(result){
             result = $.parseJSON(result);
 	////////////////////////// USE DATA FROM RESULT ///////////////////////////////
-            $("#product_d").append(result[0].description);
+            $("#product_d").append(result[0].pdes);
             $("#product_n").append(result[0].pname);
 
             document.getElementById("imgchange").src = result[0].img;
