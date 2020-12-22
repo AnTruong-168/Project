@@ -136,16 +136,22 @@ function ShowAllProduct(products){
                 <div id="Product_detail">
                 <div><img id="product_img" src="${item.img}" width="auto" height="200px"></img></div>
                     <div id="product_id">
-                        <label class="d-flex">Product ID: </label>
-                        ${item.id}
+                        <tr>
+                            <td><label>Product ID: </label></td>
+                            <td>${item.id}</td>
+                        </tr>
                     </div>
                     <div id="product_name">
-                        <label>Product Name: </label>
-                        ${item.pname}
+                        <tr>
+                            <td><label>Product Name: </label></td>
+                            <td>${item.pname}</td>
+                        </tr>
                     </div>
                     <div id="product_price">
-                        <label>Price: </label>
-                        ${item.price}
+                        <tr>
+                            <td><label>Price: </label></td>
+                            <td>${item.price}</td>
+                        </tr>
                     </div>
                 <button class="btn btn-success" id="btn-viewdetail">Detail</button>
                 <button class="btn btn-warning" id="btn-edit">Edit</button>
