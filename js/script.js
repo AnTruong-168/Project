@@ -3,7 +3,7 @@ $(document).on("submit", "#login-form", Login);
 $(document).on("submit", "#addproduct-form", AddProduct);
 $("#Products").ready(showProduct_php);
 $("#product_show_detail").ready(detailPage);
-var tmp = 0;
+var tmp;
 function Register(e)
 {
     e.preventDefault();
@@ -64,18 +64,6 @@ function Login(e)
             }
         }
     );
-}
-function Testing(e)
-{
-    e.preventDefault();
-    if($("#confirm-password").val()===$("#password").val())
-    {
-        alert("Registered successfully"+"\nUsername: "+$("#username").val()+"\nPassword: "+$("#password").val());
-    }
-    else
-    {
-        alert("Password missmatch!")
-    }
 }
 
 function AddProduct(e)
