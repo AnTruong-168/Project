@@ -172,6 +172,7 @@ function viewDetail(product)
 }
 function detailPage()
 {
+    alert(tmp);
         $.ajax({
             type: "POST", 
             url: "../php/product_detail.php",
@@ -180,10 +181,12 @@ function detailPage()
                 result = $.parseJSON(result);
                 if(result){
                     var text = `
+                            <div>
                             <div class="d-flex"><img src='${result[0].img}' width="200%"></div>
                             <div><label>Name :</label>${result[0].pname}</div>
                             <div><label>Price :</label>${result[0].price}</div>
                             <div><label>Description :</label>${result[0].des}</div>
+                            </div>
                                 `;
                      
                         $("#product_show_detail").append(text);
