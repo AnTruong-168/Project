@@ -141,7 +141,7 @@ function ShowAllProduct(products){
                     </div>
                     <div id="product_name">
                         <label>Product Name: </label>
-                        ${item.product_name}
+                        ${item.pname}
                     </div>
                     <div id="product_price">
                         <label>Price: </label>
