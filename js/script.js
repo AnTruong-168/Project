@@ -1,7 +1,6 @@
 $(document).on("submit", "#register-form", Register);
 $(document).on("submit", "#login-form", Login);
 $(document).on("submit", "#addproduct-form", AddProduct);
-$(document).on("submit", "#Product-form", ViewDetail);
 $("#Products").ready(showProduct_php);
 function Register(e)
 {
