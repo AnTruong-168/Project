@@ -2,6 +2,7 @@ $(document).on("submit", "#register-form", Register);
 $(document).on("submit", "#login-form", Login);
 $(document).on("submit", "#addproduct-form", AddProduct);
 $("#Products").ready(showProduct_php);
+var tmp = 0;
 function Register(e)
 {
     e.preventDefault();
@@ -153,10 +154,18 @@ function ShowAllProduct(products){
                             <td>${item.price}</td>
                         </tr>
                     </div>
-                <button class="btn btn-success" id="btn-viewdetail">Detail</button>
+                <button id="btn-viewdetail" class="btn btn-success" data-product-id='${item.id}' onclick='viewDetail(this)'>Detail</button>
                 <button class="btn btn-warning" id="btn-edit">Edit</button>
                 </div> `;
                     
                        $("#Products").append(text);
    }
+}
+
+function viewDetail(product)
+{
+    
+    tmp = product.getAttribute('data-product-id');
+    alert(tmp);
+    
 }
