@@ -175,6 +175,7 @@ function viewDetail(product)
             result = $.parseJSON(result);
             if(result){
                 detailPage(result);
+                location.href = "product_detail.html"
             }
             else{
                 return;
