@@ -39,7 +39,7 @@
     <div id="form-control">
         <form id="addproduct-form">
             
-            <label for="username" class="form-label">Product information</label>
+            <label for="product_id" class="form-label">Product information</label>
             <div class="input-group mb-3">
                 <span class="input-group-text">ID</span>
                 <input type="text" class="form-control" id="product_id" placeholder="Product ID" aria-label="Product ID" required>
@@ -55,11 +55,23 @@
                 <input type="text" class="form-control" id="product_des" placeholder="Description" aria-label="Description" required>
             </div>
             
+
             <div class="input-group mb-3">
                 <span class="input-group-text">Price</span>
                 <input type="text" class="form-control" id="product_price" placeholder="Price" aria-label="Cost" required>
             </div>
 
+            <label for="product_category">Product Category</label>
+            <ol>
+                <li>Toys for boys</li>
+                <li>Toys for girls</li>
+            </ol>
+            
+            <div class="input-group mb-3">
+                <span class="input-group-text">Category</span>
+                <input type="number" class="form-control" id="product_category" placeholder="Category" aria-label="Category" required>
+            </div>
+            
             <div class="input-group mb-3">
                 <span class="input-group-text">Image link</span>
                 <input type="text" class="form-control" id="product_img" placeholder="example.com/imglink" aria-label="Product image" required>

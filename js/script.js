@@ -79,31 +79,39 @@ function Testing(e)
 function AddProduct(e)
 {
     e.preventDefault();
-    $.ajax(
-        {
-            type: "POST",
-            url: "../php/addproduct.php",
-            data: {
-                product_id : $("#product_id").val(),
-                product_name : $("#product_name").val(),
-                product_price : $("#product_price").val(),
-                product_des : $("#product_des").val(),
-                product_img : $("#product_img").val()
-            },
-            success: function( result ) {
-                result = $.parseJSON(result);
-                
-                if(result.success) {
-                    alert("Added product");
-                    location.href="home.html";
-                }
-                else {
-                    alert("Failed to add new product");
-                    location.href="home.html"
+    if($("#product_category").val()>2 || $("#product_category").val()<0)
+    {
+        alert("Wrong product category!");
+    }
+    else
+    {
+        $.ajax(
+            {
+                type: "POST",
+                url: "../php/addproduct.php",
+                data: {
+                    product_id : $("#product_id").val(),
+                    product_name : $("#product_name").val(),
+                    product_price : $("#product_price").val(),
+                    product_type : $("#product_category").val(),
+                    product_des : $("#product_des").val(),
+                    product_img : $("#product_img").val()
+                },
+                success: function( result ) {
+                    result = $.parseJSON(result);
+                    
+                    if(result.success) {
+                        alert("Added product");
+                        location.href="home.html";
+                    }
+                    else {
+                        alert("Failed to add new product");
+                        location.href="home.html"
+                    }
                 }
             }
-        }
-    );
+        );
+    } 
 }
 
 function showProduct_php(){
@@ -128,12 +136,15 @@ function ShowAllProduct(products){
                 <div id="Product_detail">
                 <div><img id="product_img" src="${item.img}" width="auto" height="200px"></img></div>
                     <div id="product_id">
+                        <label class="d-flex">Product ID: </label>
                         ${item.id}
                     </div>
                     <div id="product_name">
+                        <label>Product Name: </label>
                         ${item.product_name}
                     </div>
                     <div id="product_price">
+                        <label>Price: </label>
                         ${item.price}
                     </div>
                 <button class="btn btn-success" id="btn-viewdetail">Detail</button>
