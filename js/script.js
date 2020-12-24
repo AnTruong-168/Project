@@ -172,3 +172,7 @@ function viewDetail(product){
         }
     });
 }
+function addtocart(id)
+{
+    alert("id: "+id);
+}
