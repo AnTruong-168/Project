@@ -122,7 +122,7 @@ function ShowAllProduct(products){
 
    for(item of products){
        var text = `
-                <div id="Product_detail">
+                <div class="col-sm" id="Product_detail">
                 <div><img id="product_img" src="${item.img}" width="auto" height="200px"></img></div>
                     <div id="product_id">
                         <tr>
