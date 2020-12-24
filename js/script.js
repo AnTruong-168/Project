@@ -162,21 +162,11 @@ function viewDetail(product){
             $("#product_d").append(result[0].pdes);
             $("#product_n").append(result[0].pname);
             $("#product_p").append(result[0].price+"VND");
-            document.createElement($('<button/>', 
-            {
-                text: 'Add to Cart',
-                id: 'btn_addtocart',
-                click: addtocart()
-            }
-            )
-            );
             document.getElementById("imgchange").src = result[0].img;
-            
+            var btn = document.createElement("INPUT");
+            btn.setAttribute("type","button");
+            btn.setAttribute("value","Add to Cart");
+            btn.setAttribute("onclick","addtocart(this)");    
         }
     });
-}
-
-function addtocart()
-{
-    alert("success");
 }
