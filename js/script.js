@@ -140,6 +140,7 @@ function ShowAllProduct(products){
                         <tr>
                             <td>Price: </td>
                             <td>${item.price}</td>
+                            <td> VND</td>
                         </tr>
                     </div>
                 <button id="btn-viewdetail" class="btn btn-success" data-product-id='${item.id}' onclick='viewDetail(this)'>Detail</button>
