@@ -143,7 +143,7 @@ function ShowAllProduct(products){
                         </tr>
                     </div>
                 <button id="btn-viewdetail" class="btn btn-success" data-product-id='${item.id}' onclick='viewDetail(this)'>Detail</button>
-                <button onclick='addtoCart(this)' class="btn btn-warning" id="btn-addcart">Add to Cart</button>
+                <button data-product-id='${item.id}' onclick='addtoCart(this)' class="btn btn-warning" id="btn-addcart">Add to Cart</button>
                 </div> `;
                     
                        $("#Products").append(text);
