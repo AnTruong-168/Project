@@ -143,7 +143,7 @@ function ShowAllProduct(products){
                         </tr>
                     </div>
                 <button id="btn-viewdetail" class="btn btn-success" data-product-id='${item.id}' onclick='viewDetail(this)'>Detail</button>
-                <button class="btn btn-warning" id="btn-edit">Edit</button>
+                <button onclick='addtoCart(this)' class="btn btn-warning" id="btn-addcart">Add to Cart</button>
                 </div> `;
                     
                        $("#Products").append(text);
@@ -164,15 +164,10 @@ function viewDetail(product){
             $("#product_n").append(result[0].pname);
             $("#product_p").append(result[0].price+"VND");
             document.getElementById("imgchange").src = result[0].img;
-            var btn = document.createElement("INPUT");
-            btn.setAttribute("type","button");
-            btn.setAttribute("value","Add to Cart");
-            btn.setAttribute("onclick","addtocart(this)");    
-            document.getElementById("atc-btn").appendChild(btn);
         }
     });
 }
-function addtocart(id)
+function addtoCart(id)
 {
     alert("id: "+id);
 }
