@@ -167,7 +167,8 @@ function viewDetail(product){
         }
     });
 }
-function addtoCart(id)
+function addtoCart(product)
 {
-    alert("id: "+id);
+    var ID= product.getAttribute('data-product-id');
+    alert("ID: "+ ID);
 }
