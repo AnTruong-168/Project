@@ -152,6 +152,7 @@ function ShowAllProduct(products){
 function viewDetail(product){
     $("#product_d").empty();
     $("#product_n").empty();
+    $("#product_p").empty();
     var ID= product.getAttribute('data-product-id'); //Get value from attribute data-product-id
     $.ajax({
         type: "POST", url: "../php/product_detail.php",
@@ -167,6 +168,7 @@ function viewDetail(product){
             btn.setAttribute("type","button");
             btn.setAttribute("value","Add to Cart");
             btn.setAttribute("onclick","addtocart(this)");    
+            document.getElementById("atc-btn").appendChild(btn);
         }
     });
 }
