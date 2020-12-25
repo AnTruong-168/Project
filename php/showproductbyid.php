@@ -1,5 +1,5 @@
 <?php
-$product_id = $_POST['product_id']
+$product_id = $_POST['product_id'];
 include("database.php");
 if(getdb()){
     $query="SELECT * FROM products where id = '$product_id'";
