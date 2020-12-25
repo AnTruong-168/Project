@@ -246,7 +246,7 @@ function ShowCart(products){
               document.getElementById(result[0].id).src =result[0].img;
               product_cart_control.appendChild(divname);
               divname.append("Product name: " + result[0].pname);
-              product_cart_control.appendChild(document.createElement("br"));
+              divname.appendChild(document.createElement("br"));
               product_cart_control.appendChild(divprice);
               divprice.append("Product price: " + result[0].price);
               
