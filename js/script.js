@@ -233,18 +233,21 @@ function ShowCart(products){
               var img = document.createElement("img");
               img.id = "img_link";
               divimg.appendChild(img);
-              document.getElementById("img_link").src(result[0].img);
+              
 
               var divname = document.createElement("div");
               divname.id = "cart_product_name"
-              divname.appendChild(result[0].pname);
+              
               var divprice = document.createElement("div");
               divprice.id = "cart_product_price"
-              divprice.appendChild(result[0].price);
+              
               var divcartproduct = document.getElementById("cart_products");
               divcartproduct.appendChild(divimg);
               divcartproduct.appendChild(divname);
               divcartproduct.appendChild(divprice);
+              document.getElementById("img_link").src(result[0].img);
+              divprice.appendChild(result[0].price);
+              divname.appendChild(result[0].pname);
               
           }
        });
