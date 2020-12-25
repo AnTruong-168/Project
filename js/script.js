@@ -232,23 +232,18 @@ function ShowCart(products){
               divimg.id = "cart_product_img";
               var img = document.createElement("img");
               img.id = "imgcart";
-              divimg.appendChild(img);
-              
-
               var divname = document.createElement("div");
               divname.id = "cart_product_name";
-              
               var divprice = document.createElement("div");
               divprice.id = "cart_product_price";
-              
               var divcartproduct = document.getElementById("cart_products");
               divcartproduct.appendChild(divimg);
-              divcartproduct.appendChild(divname);
-              divcartproduct.appendChild(divprice);
+              divimg.appendChild(img);
               document.getElementById('imgcart').src =result[0].img;
-              divprice.append(result[0].price);
+              divcartproduct.appendChild(divname);
               divname.append(result[0].pname);
-              
+              divcartproduct.appendChild(divprice);
+              divprice.append(result[0].price);
           }
        });
    }
