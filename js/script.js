@@ -2,7 +2,6 @@ $(document).on("submit", "#register-form", Register);
 $(document).on("submit", "#login-form", Login);
 $(document).on("submit", "#addproduct-form", AddProduct);
 $("#Products").ready(showProduct_php);
-var tmp;
 function Register(e)
 {
     e.preventDefault();
@@ -54,7 +53,8 @@ function Login(e)
                 result = $.parseJSON(result);
                 
                 if(result.success) {
-                    tmp = $("#username").val();
+                    var user= result[0].name;;
+                    localStorage.setItem("user",user);
                     alert("Login successfully!");
                     location.href="home.html";
                 }
