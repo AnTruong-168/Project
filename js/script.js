@@ -228,10 +228,19 @@ function ShowCart(products){
           },
           success: function(result){
               result = $.parseJSON(result);
-              $("#cart_products").append(
-              $("#cart_product_detail").append(
-              $("#product_n").append(result[0].pname),
-              $("#product_p").append(result[0].price+" VND")));
+              var divimg = document.createElement("div");
+              divimg.id = "cart_product_img";
+              divimg.appendChild(document.createElement("img").src=item.img);
+              var divname = document.createElement("div");
+              divname.id = "cart_product_name"
+              divname.appendChild(item.pname);
+              var divprice = document.createElement("div");
+              divprice.id = "cart_product_price"
+              divprice.appendChild(item.price);
+              var divcartproduct = document.getElementById("cart_products");
+              divcartproduct.appendChild(divimg);
+              divcartproduct.appendChild(divname);
+              divcartproduct.appendChild(divprice);
           }
        });
    }
