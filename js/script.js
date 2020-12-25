@@ -231,7 +231,8 @@ function ShowCart(products){
               var divimg = document.createElement("div");
               divimg.id = "cart_product_img";
               var img = document.createElement("img");
-              img.src=result[0].img;
+              img.id = "img_link";
+              document.getElementById("img_link").src(result[0].img);
               divimg.appendChild(img);
               var divname = document.createElement("div");
               divname.id = "cart_product_name"
