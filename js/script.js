@@ -228,9 +228,11 @@ function ShowCart(products){
           },
           success: function(result){
               result = $.parseJSON(result);
-              /*var divimg = document.createElement("div");
+              var divimg = document.createElement("div");
               divimg.id = "cart_product_img";
-              divimg.appendChild(document.createElement("img").src=result[0].img);
+              var img = document.createElement("img");
+              img.src=result[0].img;
+              divimg.appendChild(img);
               var divname = document.createElement("div");
               divname.id = "cart_product_name"
               divname.appendChild(result[0].pname);
@@ -240,10 +242,8 @@ function ShowCart(products){
               var divcartproduct = document.getElementById("cart_products");
               divcartproduct.appendChild(divimg);
               divcartproduct.appendChild(divname);
-              divcartproduct.appendChild(divprice);*/
-              alert(result[0].img);
-              alert(result[0].pname);
-              alert(result[0].price);
+              divcartproduct.appendChild(divprice);
+              
           }
        });
    }
