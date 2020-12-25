@@ -24,3 +24,8 @@
     width: auto;
     height: 150px;
 }
+
+#cart_products
+{
+    align-self: center;
+}
