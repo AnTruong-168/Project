@@ -241,13 +241,15 @@ function ShowCart(products){
               var divprice = document.createElement("div");
               divprice.id = "cart_product_price";
               var divcartproduct = document.getElementById("cart_products");
-              divcartproduct.appendChild(divimg);
+              divcartproduct.appendChild(product_cart_control);
+              product_cart_control.appendChild(divimg);
               divimg.appendChild(img);
               document.getElementById(result[0].id).src =result[0].img;
-              divcartproduct.appendChild(divname);
+              product_cart_control.appendChild(divname);
               divname.append(result[0].pname);
-              divcartproduct.appendChild(divprice);
+              product_cart_control.appendChild(divprice);
               divprice.append(result[0].price);
+              
           }
        });
    }
