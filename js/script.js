@@ -164,7 +164,7 @@ function viewDetail(product){
 	////////////////////////// USE DATA FROM RESULT ///////////////////////////////
             $("#product_d").append(result[0].pdes);
             $("#product_n").append(result[0].pname);
-            $("#product_p").append(result[0].price+"VND");
+            $("#product_p").append(result[0].price+" VND");
             document.getElementById("imgchange").src = result[0].img;
         }
     });
@@ -173,6 +173,10 @@ function viewDetail(product){
 function addtoCart(product)
 {
     var ID= product.getAttribute('data-product-id');
-    alert("ID: "+ ID);
-    alert("Name: "+tmp);
+    
+}
+
+function logout()
+{
+    localStorage.removeItem("user");
 }
