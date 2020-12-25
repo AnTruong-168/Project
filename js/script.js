@@ -228,11 +228,15 @@ function ShowCart(products){
           },
           success: function(result){
               result = $.parseJSON(result);
+              var product_cart_control = document.createElement("div");
+              product_cart_control.className="d-flex flex-row";
               var divimg = document.createElement("div");
               divimg.id = "cart_product_img";
+              divimg.className = "p-2";
               var img = document.createElement("img");
               img.id = result[0].id;
               var divname = document.createElement("div");
+              divname.className= "p-2";
               divname.id = "cart_product_name";
               var divprice = document.createElement("div");
               divprice.id = "cart_product_price";

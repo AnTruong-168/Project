@@ -19,3 +19,8 @@
 {
     background: gray;
 }
+#cart_product_img img
+{
+    width: auto;
+    height: 150px;
+}
