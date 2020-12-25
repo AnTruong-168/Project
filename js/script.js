@@ -217,7 +217,10 @@ function showCart_php()
 }
 function ShowCart(products){
     
-
+    var pagecontent = document.getElementById("PageContent");
+    var pageheading = document.createElement("h2");
+    pageheading.text(localStorage.getItem("user")+"'s Cart");
+    pagecontent.appendChild(pageheading);
    for(item of products){
        $.ajax({
           type: "POST",
