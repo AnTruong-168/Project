@@ -231,7 +231,7 @@ function ShowCart(products){
               var divimg = document.createElement("div");
               divimg.id = "cart_product_img";
               var img = document.createElement("img");
-              img.id = "img_link";
+              img.id = "imgcart";
               divimg.appendChild(img);
               
 
@@ -245,9 +245,9 @@ function ShowCart(products){
               divcartproduct.appendChild(divimg);
               divcartproduct.appendChild(divname);
               divcartproduct.appendChild(divprice);
-              document.getElementById('img_link').src =result[0].img;
-              divprice.appendChild(result[0].price);
-              divname.appendChild(result[0].pname);
+              document.getElementById('imgcart').src =result[0].img;
+              divprice.append(result[0].price);
+              divname.append(result[0].pname);
               
           }
        });
