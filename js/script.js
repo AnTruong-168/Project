@@ -238,7 +238,6 @@ function ShowCart(products){
               var divinfomation = document.createElement("div");
               
               var divcartproduct = document.getElementById("cart_products");
-              document.getElementById("PageContent").appendChild(document.createElement("h2").append(localStorage.getItem("user")+"'s cart"));
               divcartproduct.appendChild(product_cart_control);
               product_cart_control.appendChild(divimg);
               divimg.appendChild(img);
