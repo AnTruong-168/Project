@@ -54,6 +54,7 @@ function Login(e)
                 result = $.parseJSON(result);
                 
                 if(result.success) {
+                    tmp = $("#username").val();
                     alert("Login successfully!");
                     location.href="home.html";
                 }
@@ -168,8 +169,10 @@ function viewDetail(product){
         }
     });
 }
+
 function addtoCart(product)
 {
     var ID= product.getAttribute('data-product-id');
     alert("ID: "+ ID);
+    alert("Name: "+tmp);
 }
