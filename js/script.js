@@ -230,17 +230,18 @@ function ShowCart(products){
               result = $.parseJSON(result);
               var divimg = document.createElement("div");
               divimg.id = "cart_product_img";
-              divimg.appendChild(document.createElement("img").src=item.img);
+              divimg.appendChild(document.createElement("img").src=result[0].img);
               var divname = document.createElement("div");
               divname.id = "cart_product_name"
-              divname.appendChild(item.pname);
+              divname.appendChild(result[0].pname);
               var divprice = document.createElement("div");
               divprice.id = "cart_product_price"
-              divprice.appendChild(item.price);
+              divprice.appendChild(result[0].price);
               var divcartproduct = document.getElementById("cart_products");
               divcartproduct.appendChild(divimg);
               divcartproduct.appendChild(divname);
               divcartproduct.appendChild(divprice);
+              alert(result[0].img);
           }
        });
    }
