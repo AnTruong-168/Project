@@ -236,10 +236,10 @@ function ShowCart(products){
               
 
               var divname = document.createElement("div");
-              divname.id = "cart_product_name"
+              divname.id = "cart_product_name";
               
               var divprice = document.createElement("div");
-              divprice.id = "cart_product_price"
+              divprice.id = "cart_product_price";
               
               var divcartproduct = document.getElementById("cart_products");
               divcartproduct.appendChild(divimg);
