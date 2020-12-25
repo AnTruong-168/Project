@@ -230,7 +230,6 @@ function ShowCart(products){
               result = $.parseJSON(result);
               var product_cart_control = document.createElement("div");
               product_cart_control.className="d-flex flex-row";
-              var br = document.createElement("/br");
               var divimg = document.createElement("div");
               divimg.id = "cart_product_img";
               divimg.className = "p-2";
@@ -247,7 +246,6 @@ function ShowCart(products){
               document.getElementById(result[0].id).src =result[0].img;
               product_cart_control.appendChild(divname);
               divname.append("Product name: " + result[0].pname);
-              product_cart_control.appendChild(br);
               product_cart_control.appendChild(divprice);
               divprice.append("Product price: " + result[0].price);
               
