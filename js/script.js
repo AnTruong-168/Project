@@ -53,7 +53,7 @@ function Login(e)
                 result = $.parseJSON(result);
                 
                 if(result.success) {
-                    var user= result[0].name;;
+                    var user= $("#username").val();
                     localStorage.setItem("user",user);
                     alert("Login successfully!");
                     location.href="home.html";
