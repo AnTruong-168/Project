@@ -231,7 +231,7 @@ function ShowCart(products){
               var divimg = document.createElement("div");
               divimg.id = "cart_product_img";
               var img = document.createElement("img");
-              img.className = result[0].id;
+              img.id = result[0].id;
               var divname = document.createElement("div");
               divname.id = "cart_product_name";
               var divprice = document.createElement("div");
@@ -239,8 +239,7 @@ function ShowCart(products){
               var divcartproduct = document.getElementById("cart_products");
               divcartproduct.appendChild(divimg);
               divimg.appendChild(img);
-              document.getElementsByClassName(result[0].id).src =result[0].img;
-              document.getElementsByName
+              document.getElementById(result[0].id).src =result[0].img;
               divcartproduct.appendChild(divname);
               divname.append(result[0].pname);
               divcartproduct.appendChild(divprice);
