@@ -173,7 +173,25 @@ function viewDetail(product){
 function addtoCart(product)
 {
     var ID= product.getAttribute('data-product-id');
-    
+    var user = localStorage.getItem("user");
+    $.ajax({
+            type: "POST",
+            url:  "../php/addtoCart.php",
+            data:
+            {
+                username: user,
+                product_id: ID
+            },
+            success: function(result){
+                result = $.parseJSON(result);
+                if(result.success) {
+                    alert("Added to Cart");
+                }
+                else {
+                    alert("Failed to add item to Cart");
+                }
+            }
+    });
 }
 
 function logout()
