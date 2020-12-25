@@ -2,6 +2,7 @@ $(document).on("submit", "#register-form", Register);
 $(document).on("submit", "#login-form", Login);
 $(document).on("submit", "#addproduct-form", AddProduct);
 $("#Products").ready(showProduct_php);
+$("#cart_products").ready(showCart_php);
 function Register(e)
 {
     e.preventDefault();
@@ -161,7 +162,7 @@ function viewDetail(product){
         data: {id: ID},
         success: function(result){
             result = $.parseJSON(result);
-	////////////////////////// USE DATA FROM RESULT ///////////////////////////////
+    ////////////////////////// USE DATA FROM RESULT ///////////////////////////////
             $("#product_d").append(result[0].pdes);
             $("#product_n").append(result[0].pname);
             $("#product_p").append(result[0].price+" VND");
@@ -193,7 +194,48 @@ function addtoCart(product)
             }
     });
 }
+function showCart_php()
+{
+    var user = localStorage.getItem("user");
+    $.ajax({
+        type: "POST", 
+        url: "../php/showcart.php",
+        data: 
+        {
+            username: user
+        },
+        success: function(result){
+            result = $.parseJSON(result);
+            if(result){
+                ShowCart(result);
+            }
+            else{
+                return;
+            }
+        }
+    });
+}
+function ShowCart(products){
+    
 
+   for(item of products){
+       $.ajax({
+          type: "POST",
+          url: "../php/showproductbyid.php",
+          data:
+          {
+              product_id: item.id
+          },
+          success: function(result){
+              result = $.parseJSON(result);
+              $("#cart_products").append(
+              $("#cart_product_detail").append(
+              $("#product_n").append(result[0].pname),
+              $("#product_p").append(result[0].price+" VND")));
+          }
+       });
+   }
+}
 function logout()
 {
     localStorage.removeItem("user");
